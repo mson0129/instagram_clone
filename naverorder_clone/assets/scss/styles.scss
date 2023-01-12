@@ -1,7 +1,9 @@
+@import "./abstracts/mixin_common";
 @import "./abstracts/variables_color";
 @import "./abstracts/variables";
 
 @import "./base/reset";
 @import "./base/preset";
 
+@import "./components/header_area";
 @import "./components/order_type";

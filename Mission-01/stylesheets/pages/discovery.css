@@ -1,0 +1,154 @@
+/* CSS 작성 */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Layout */
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 100px;
+}
+
+.coupang-logo {
+    width: 176px;
+    height: 40px;
+}
+
+.today-discovery {
+    padding-top: 48px;
+}
+
+.headings {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.heading-two {
+    display: block;
+    height: 28px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 115%;
+    color: var(--color-black);
+}
+
+.headings-divider {
+    display: block;
+    height: 20px;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--color-gray-600);
+}
+
+.heading-three {
+    display: block;
+    height: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 115%;
+    color: var(--color-gray-600);
+}
+
+.goods-list {
+    width: calc(100% + 16px);
+    display: block;
+    overflow: hidden;
+}
+
+.goods-item {
+    position: relative;
+    float: left;
+    display: block;
+    height: 310px;
+    width: 243px;
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.cols2 {
+    width: 502px;
+}
+
+.goods-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--color-gray-500);
+    background-color: #FFF;
+}
+
+.goods-item:hover .goods-link, .goods-item:focus .goods-link {
+    border: 1px solid var(--color-blue-600);
+}
+
+.goods-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.goods-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: block;
+    height: 42px;
+    width: 42px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: none;
+}
+
+.right-arrow-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-color: var(--color-gray-500);
+}
+
+.goods-item:hover .right-arrow-wrapper {
+    background-color: var(--color-blue-600);
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    transform: translate(25%, -50%) rotate(45deg);
+}
+
+.goods-btn::before {
+    content: '구매하기';
+    color: #FFF;
+    display: inline-block;
+    height: 100%;
+    height: 17px;
+    padding: 12px 20px 13px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 120%;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: var(--color-blue-600);
+}

@@ -1,0 +1,59 @@
+/* 카테고리별 추천 광고상품 */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* Layout */
+.wrapper {
+    width: 1020px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-top: 100px;
+}
+
+.category-recommendation {
+    margin-top: 48px;
+}
+
+.heading2 > * {
+    display: block;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 115%;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 115%;
+}
+
+.title > em {
+    /* display: inline-block;
+    margin-left: 10px; */
+    font-style: normal;
+    color: var(--color-blue-600);
+}
+
+.category {
+    margin-top: 24px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+#category1 {
+    border-top-color: var(--color-brown-300);
+    border-bottom-color: var(--color-brown-300);
+}

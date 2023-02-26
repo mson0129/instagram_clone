@@ -2,20 +2,126 @@
 <html lang="ko-KR">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>헤더 - 쿠팡(Coupang)</title>
-  <link rel="icon" href="/assets/favicon/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/stylesheets/main.css" />
-  <script src="/js/main.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>헤더 - 쿠팡(Coupang)</title>
+    <link rel="icon" href="/assets/favicon/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <script src="/js/main.js" defer></script>
 </head>
 
 <body>
+    <div class="login-bar">
+        <div class="login-bar-wrapper">
+            <ul class="login-bar-list">
+                <li class="login-bar-item"><a href="/" class="login-bar-link">로그인</a></li>
+                <li class="login-bar-item"><a href="/" class="login-bar-link">회원가입</a></li>
+                <li class="login-bar-item"><a href="/" class="login-bar-link">고객센터</a></li>
+                <li class="login-bar-item"><a href="/" class="login-bar-link">쿠팡플레이</a></li>
+                <li class="login-bar-item"><a href="/" class="login-bar-link">제휴마케팅</a></li>
+            </ul>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header-wrapper">
+            <h1 class="heading1"><a href="https://www.coupang.com/" class="coupang-link" rel="noreferrer">Coupang</a></h1>
+            <div class="category-hamburger">
+                <button class="button--category">카테고리</button>
+            </div>
+            <div class="search">
+                <form action="/" method="get" class="search-form">
+                    <div class="search-dropdown">
+                        <select name="category" class="search-category">
+                            <option value="all">전체</option>
+                            <option value="1">여성패션</option>
+                            <option value="2">남성패션</option>
+                            <option value="3">남녀 공용 의류</option>
+                            <option value="4">유아동패션</option>
+                            <option value="5">뷰티</option>
+                            <option value="6">출산/유아동</option>
+                            <option value="7">식품</option>
+                            <option value="8">주방용품</option>
+                            <option value="9">생활용품</option>
+                            <option value="10">홈인테리어</option>
+                            <option value="11">가전디지털</option>
+                            <option value="12">스포츠/레저</option>
+                            <option value="13">자동차용품</option>
+                            <option value="14">도서/음반/DVD</option>
+                            <option value="15">완구/취미</option>
+                        </select>
+                        <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-category-arrow">
+                            <path d="M9 0H0L4.69565 6L9 0Z" fill="#767676"  onclick="document.querySelector('.search-category').click()">
+                        </svg>
+                    </div>
+                    <input type="search" name="q" id="search-text" class="search-text" placeholder="찾고 싶은 상품을 검색해 보세요!" required>
+                    <button type="button" id="search-by-voice-btn" class="search-by-voice-btn" aria-label="음성 검색"></button>
+                    <button type="submit" id="search-btn" class="search-btn" aria-label="키워드 검색"></button>
+                </form>
+            </div>
+            <div class="myCoupang">
+                <button class="button--myCoupang">마이쿠팡</button>
+                <div class="mycoupang-msg">
+                    <div class="mycoupang-msg-bubble"></div>
+                    <ul class="mycoupang-list">
+                        <li class="mycoupang-item"><a href="/" class="mycoupang-link">주문목록</a></li>
+                        <li class="mycoupang-item"><a href="/" class="mycoupang-link">취소/반품</a></li>
+                        <li class="mycoupang-item"><a href="/" class="mycoupang-link">찜리스트</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cart">
+                <button class="button--cart">장바구니</button>
+                <p class="cart-number-of-items" aria-label="상품개수">0</p>
+                <div class="cart-msg">
+                    <div class="cart-msg-bubble"></div>
+                    장바구니에 담긴 상품이 없습니다.
+                </div>
+            </div>
+            <nav class="gnb">
+                <ul class="gnb-list">
+                    <li class="gnb-item"><img class="gnb-item-icon-left" src="/assets/icon/icon-rocket.svg">로켓배송</li>
+                    <li class="gnb-item"><img class="gnb-item-icon-left" src="/assets/icon/icon-fresh.svg">로켓프레시</li>
+                    <li class="gnb-item">2022년 설날<img class="gnb-item-icon-right" src="/assets/icon/new.svg"></li>
+                    <li class="gnb-item">로켓직구</li>
+                    <li class="gnb-item">골드박스</li>
+                    <li class="gnb-item">정기배송</li>
+                    <li class="gnb-item">이벤트/쿠폰</li>
+                    <li class="gnb-item">기획전</li>
+                    <li class="gnb-item">여행티켓</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script type="text/javascript">
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
+        const search_by_voice_btn = document.querySelector('#search-by-voice-btn');
+        const search_text_box = document.querySelector('#search-text');
+        recognition.lang = 'ko-KR';
+        recognition.onresult = (event) => {
+            const result = event.results[0][0].transcript;
+            search_text_box.value = result;
+            console.log(result);
+        };
 
+        let recognition_flag = false;
+        search_by_voice_btn.addEventListener('click', () => {
+            if (recognition_flag) {
+                recognition.stop();
+                console.log('Listening stopped');
+                recognition_flag = false;
+            } else {
+                recognition.start();
+                recognition_flag = true;
+                console.log('Listening started');
+            }
+        });
+    </script>
 </body>
 
 </html>

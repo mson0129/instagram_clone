@@ -1,6 +1,4 @@
 // do something!
-import renderNews from "./renderNews.js";
-
 function NewsList($container) {
     // <div class="news-list-container">
     //     <article class="news-list">
@@ -50,6 +48,81 @@ function NewsList($container) {
     $newsListContainer.appendChild($scrollObserver);
 
     $container.appendChild($newsListContainer);
+
+    // REQ2. Get news from News API and render it on the page
+    const renderNews = async (category, page, pageSize) => {
+        let news = await getNews(category, page, pageSize);
+        return news.map((article) => renderArticle(article));
+    }
+
+    const getNews = async (category, page, pageSize) => {
+        const apiKey = "4b3128891f014278bfa3701eb7130721";
+        const url = `https://newsapi.org/v2/top-headlines?country=kr&category=${category === "all" ? "" : category}&page=${page}&pageSize=${pageSize}&apiKey=${apiKey}`
+        let news = await axios.get(url);
+        return news.data.articles;
+    }
+
+    const renderArticle = (article) => {
+        let $section = document.createElement("section");
+        $section.classList.add("news-item");
+    
+        // Thumbnail
+        let $thumbnail = document.createElement("div");
+        $thumbnail.classList.add("thumbnail");
+        let $thumbnailLink = document.createElement("a");
+        $thumbnailLink.setAttribute("href", article.url);
+        $thumbnailLink.setAttribute("target", "_blank");
+        $thumbnailLink.setAttribute("rel", "noopener noreferrer");
+        let $thumbnailImg = document.createElement("img");
+        $thumbnailImg.setAttribute("src", article.urlToImage ? article.urlToImage : "data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==");
+        $thumbnailImg.setAttribute("alt", "thumbnail");
+        $thumbnailLink.appendChild($thumbnailImg);
+        $thumbnail.appendChild($thumbnailLink);
+        $section.appendChild($thumbnail);
+    
+        // Contents
+        let $contents = document.createElement("div");
+        $contents.classList.add("contents");
+    
+        // Title
+        let $title = document.createElement("h2");
+        let $titleLink = document.createElement("a");
+        $titleLink.setAttribute("href", article.url);
+        $titleLink.setAttribute("target", "_blank");
+        $titleLink.setAttribute("rel", "noopener noreferrer");
+        $titleLink.textContent = article.title;
+        $title.appendChild($titleLink);
+        $contents.appendChild($title);
+    
+        // Content
+        let $content = document.createElement("p");
+        $content.textContent = article.content ? article.content : "";
+        $contents.appendChild($content);
+        
+        $section.appendChild($contents);
+    
+        return $section;
+    }
+
+    // REQ3. Infinite scroll
+    let page = 1;
+    let intersectionObserver = new IntersectionObserver(async ([e], observer) => {
+        if (e.isIntersecting) {
+            observer.unobserve(e.target);
+            let newsItems = await renderNews("all", page++, 10);
+            newsItems.forEach((newsItem) => {
+                $newsList.appendChild(newsItem);
+            });
+            observer.observe(e.target);
+        }
+    });
+    intersectionObserver.observe($scrollObserverImg);
+
+    // REQ4. Subscribe chaning category
+    window.state.subscribe(() => {
+        page = 1;
+        $newsList.innerHTML = "";
+    });
 }
 
 export default NewsList;

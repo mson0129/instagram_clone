@@ -109,7 +109,7 @@ function NewsList($container) {
     let intersectionObserver = new IntersectionObserver(async ([e], observer) => {
         if (e.isIntersecting) {
             observer.unobserve(e.target);
-            let newsItems = await renderNews("all", page++, 10);
+            let newsItems = await renderNews(window.state.category, page++, 10);
             newsItems.forEach((newsItem) => {
                 $newsList.appendChild(newsItem);
             });

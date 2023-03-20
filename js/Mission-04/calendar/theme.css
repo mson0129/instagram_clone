@@ -1,0 +1,16 @@
+.calendar {position: relative; border-radius: 1em 1em 1em 1em; min-height: 35em; width: 30em; min-width: 30em; font-size: 16px; box-shadow: 0 0 1em RGBA(0, 0, 0, .25); user-select: none;}
+    .calendar .calendar-nav {display: flex; justify-content: space-between; align-items: center; padding: 1em; border-radius: 1em 1em 0 0; background-color: var(--green); color: RGBA(255, 255, 255, 1.00);}
+        .calendar .calendar-nav button {border: 0; margin: 0; background-color: transparent; color: RGBA(255, 255, 255, 1.00); cursor: pointer;}
+        .calendar .calendar-nav .calendar-nav-month {display: block; font-size: 1.25em; text-align: center;}
+        .calendar .calendar-nav .calendar-nav-year {display: block; text-align: center;}
+    .calendar .calendar-grid {display: grid; grid-template-columns: repeat(7, 1fr); align-items: center; justify-items: center; height: calc(100% - 5em); width: 100%; min-height: 30em; min-width: 30em; background-color: RGBA(255, 255, 255, 1.00); color: RGBA(0, 0, 0, 1.00); border-radius: 0 0 1em 1em; cursor: default;}
+        .calendar .calendar-grid span {display: flex; justify-content: center; align-items: center; width: calc(100% - .5em); height: calc(100% - .5em); border: 1px solid transparent; border-radius: 50%; text-align: center; color: RGBA(0, 0, 0, 1.00); transition: border-color 0, background-color 0, color 0;}
+            .calendar .calendar-grid span.calendar-grid-weekday {color: var(--gray);}
+            .calendar .calendar-grid span.calendar-grid-day {cursor: pointer;}
+            .calendar .calendar-grid span.calendar-grid-day:hover {border-color: var(--green); background-color: var(--green); color: var(--white) !important; transition: border-color .5s, background-color .5s, color .5s;}
+            .calendar .calendar-grid span.calendar-grid-day.active {background-color: var(--green);}
+            .calendar .calendar-grid span.calendar-grid-day.not-this-month {color: var(--gray);}
+            /* Calendar - REQ5. Sunday */
+            .calendar .calendar-grid span.calendar-grid-day.this-month:nth-child(7n + 8) {color: RGBA(255, 0, 0, 1.00);}
+            .calendar .calendar-grid span.today {border-color: var(--green);}
+    .calendar .calendar-resize-handle {position: absolute; bottom: 0; right: 0; width: 1em; height: 1em; border-radius: 0 0 0 1em; cursor: nwse-resize;}

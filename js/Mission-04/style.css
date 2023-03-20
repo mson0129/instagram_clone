@@ -1,0 +1,5 @@
+*, *::after, *::before {box-sizing: border-box;}
+:root {--green: RGBA(104, 191, 128, 1.00); --gray: RGBA(169, 169, 169, 1.00); --white: RGBA(255, 255, 255, 1.00);}
+body {font-family: 'Open Sans'; font-weight: 300; background-color: RGBA(242, 244, 246, 1.00);}
+input {border: 1px solid RGBA(226, 228, 229, 1.00); padding: .5em;}
+h1, h2, h3, h4, h5, h6 {font-weight: 300; color: RGBA(221, 74, 36, 1.00);}

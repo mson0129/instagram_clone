@@ -7,7 +7,7 @@ function StarRating ($container) {
     if ($linkElems.length > 0) {
         $posToInsert = $linkElems[$linkElems.length - 1];
     }
-    if (!document.querySelector("head > link[href='star-rating/index.css']")) {
+    if (!document.querySelector("head > link[href='star-rating/theme.css']")) {
         const $link = document.createElement("link");
         $link.rel = "stylesheet";
         $link.href = "star-rating/theme.css";

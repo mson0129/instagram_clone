@@ -14,7 +14,7 @@ function NewsList($container) {
     //                 <h2>
     //                     <a href="https://www.ajunews.com/view/20220220180410403" target="_blank"
     //                         rel="noopener noreferrer">
-    //                         ​[뉴욕증시 주간전망] 러시아-우크라이나 긴장 속 변동성 지속 - 아주경제
+    //                         [뉴욕증시 주간전망] 러시아-우크라이나 긴장 속 변동성 지속 - 아주경제
     //                     </a>
     //                 </h2>
     //                 <p>
